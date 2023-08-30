@@ -133,7 +133,7 @@
                 <td class="top">Price</td>
     
                 <td class="bottom">
-                    <span id="expand">+</span>
+                    <span id="expand" onclick="toggle_vis()">+</span>
                     <input type="radio" name="new-refill" id=""> / <input type="radio" name="new-refill" id="">
                 </td>
                 <td class="bottom">
@@ -164,14 +164,26 @@
                 </td>
             </tr>
         </table>
-        <div class="expandable">
+        <div class="expandable" id="expandable">
             <span class="sig">
-                Sig: <input type="text" name="" id="" >
+                Sig: <textarea name="" id="" cols="30" rows="3">give 2 puffs bid</textarea>
             </span>
             <span class="attachment">Attachments:
                 <button>Add New</button>
             </span>
+            <span><button>Add to Refill Table</button></span>
         </div>
     </main>
 </body>
+
+<script>
+    function toggle_vis() {
+  var x = document.getElementById("expandable");
+  if (x.style.display === "none") {
+    x.style.display = "flex";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
 </html>
